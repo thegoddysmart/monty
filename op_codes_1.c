@@ -41,5 +41,36 @@ void pop_op(stack_t **stack, unsigned int line_number)
 		free_all_data();
 		exit(EXIT_FAILURE);
 	}
-	/* yet to implement the delete node operation */
+	stack_operation_delete(stack);
+}
+
+
+/**
+ * pall_op - this prints all items in the stack
+ * @stack: The stack itself
+ * @line_number: this is where command is
+ * Return: Always Void
+ */
+
+void pall_op(stack_t **stack, unsigned int line_number)
+{
+	stack_t *top = NULL, *current = NULL;
+
+	(void)line_number;
+
+	if (*stack == NULL)
+		return;
+
+	current = *stack;
+
+	while (current->next != NULL)
+		current = current->next;
+
+	top = current;
+
+	while (top != NULL)
+	{
+		printf("%d\n", top->n);
+		top = top->prev;
+	}
 }
