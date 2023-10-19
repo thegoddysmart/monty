@@ -19,8 +19,8 @@ stack_t *stack_operation_delete(stack_t **head)
 
 	if (current->prev == NULL)
 	{
-		glob.TSO1 = -99;
-		glob.TSO2 = -99;
+		glob.TOS1 = -99;
+		glob.TOS2 = -99;
 		glob.top = NULL;
 		glob.bottom = NULL;
 		free(current);
@@ -33,7 +33,7 @@ stack_t *stack_operation_delete(stack_t **head)
 		glob.TSO1 = prevNode->n;
 
 		if (prevNode->prev != NULL)
-			glob.TSO2 = prevNode->prev->n;
+			glob.TOS2 = prevNode->prev->n;
 
 		glob.top = prevNode;
 		glob.bottom = prevNode->prev;
