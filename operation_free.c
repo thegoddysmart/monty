@@ -52,7 +52,7 @@ void free_all_data(void)
 	}
 	if (glob.stack != NULL)
 	{
-		freee_stack_nodes(&(glob.stack));
+		free_stack_nodes(&(glob.stack));
 		glob.stack = NULL;
 	}
 }
