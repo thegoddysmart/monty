@@ -38,6 +38,34 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+
+/**
+ * struct globs - Structure of all globals
+ * @TOS1: Value at top of stack
+ * @TOS2: Value under top of stack
+ * @arg: Argument to the opcode command
+ * @top: Pointer to Node at the top
+ * @bottom: Pointer to bottom of the stack
+ * @stack: Pointer to the stack
+ * @all_lines: All read lines
+ *
+ * Description: Structure of all global variables
+ */
+
+typedef struct globs
+{
+	int TSO1;
+	int TSO2;
+	char **arg;
+	stack_t *top;
+	stack_t *bottom;
+	stack_t *stack;
+} globs_t
+
+
+extern globs_t glob;
+
+
 void opcode_pint(stack_t **stack, unsigned int line_number);
 void push_op(stack_t **stack, unsigned int line_number);
 void pop_op(stack_t **stack, unsigned int line_number);
