@@ -60,7 +60,7 @@ typedef struct globs
 	stack_t *top;
 	stack_t *bottom;
 	stack_t *stack;
-} globs_t
+} globs_t;
 
 
 extern globs_t glob;
