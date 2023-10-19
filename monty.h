@@ -71,6 +71,8 @@ void push_op(stack_t **stack, unsigned int line_number);
 void pop_op(stack_t **stack, unsigned int line_number);
 void pall_op(stack_t **stack, unsigned int line_number);
 void pint_op(stack_t **stack, unsigned int line_number);
+void opp_add(stack_t **stack, unsigned int line_number);
+
 
 void freeStringArray(char **array);
 void free_stack_nodes(stack_t **stack);
