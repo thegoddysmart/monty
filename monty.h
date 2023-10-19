@@ -54,8 +54,8 @@ typedef struct instruction_s
 
 typedef struct globs
 {
-	int TSO1;
-	int TSO2;
+	int TOS1;
+	int TOS2;
 	char **arg;
 	stack_t *top;
 	stack_t *bottom;
