@@ -8,7 +8,7 @@
  * Return: NULL or the new node address
  */
 
-stack_t *add_stack_node(stack_t **stack, const int value)
+stack_t *add_stack_node(stack_t **stack, const int n)
 {
 	stack_t *newNode = NULL;
 	stack_t *currentNode = *stack;
@@ -28,8 +28,8 @@ stack_t *add_stack_node(stack_t **stack, const int value)
 		newNode->next = NULL;
 		*stack = newNode;
 		glob.TOS1 = newNode->n;
-		glob.stack_top = newNode;
-		glob.stack_bottom = newNode->prev;
+		glob.top = newNode;
+		glob.bottom = newNode->prev;
 	}
 	else
 	{
@@ -42,8 +42,8 @@ stack_t *add_stack_node(stack_t **stack, const int value)
 
 		glob.TOS1 = newNode->n;
 		glob.TOS2 = newNode->prev->n;
-		glob.stack_top = newNode;
-		glob.stack_bottom = newNode->prev;
+		glob.top = newNode;
+		glob.bottom = newNode->prev;
 	}
 
 	return (newNode);
