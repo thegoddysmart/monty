@@ -74,3 +74,26 @@ void pall_op(stack_t **stack, unsigned int line_number)
 		top = top->prev;
 	}
 }
+
+
+/**
+ * pint_op - this prints the top item in the stack
+ * @stack: The stack itself
+ * @line_number: this is where command is
+ * Return: Always Void
+ */
+
+void pint_op(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+
+	if (glob.TOS1 == -99)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		free_all_data();
+		exit(EXIT_FAILURE);
+	}
+	else
+		printf("%d\n", glob.TOS1);
+}
