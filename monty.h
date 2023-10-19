@@ -38,6 +38,6 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
+void opcode_pint(stack_t **stack, unsigned int line_number);
 
 #endif /*_MONTY_H*/
