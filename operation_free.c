@@ -48,7 +48,7 @@ void free_all_data(void)
 	if (glob.all_lines != NULL)
 	{
 		free_str_array(glob.all_lines);
-		glob.all_lines = NULL:
+		glob.all_lines = NULL;
 	}
 	if (glob.stack != NULL)
 	{
