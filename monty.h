@@ -39,5 +39,17 @@ typedef struct instruction_s
 } instruction_t;
 
 void opcode_pint(stack_t **stack, unsigned int line_number);
+void push_op(stack_t **stack, unsigned int line_number);
+void pop_op(stack_t **stack, unsigned int line_number);
+void pall_op(stack_t **stack, unsigned int line_number);
+void opcode_pint(stack_t **stack, unsigned int line_number);
+
+
+void freeStringArray(char **array);
+void free_stack_nodes(stack_t **stack);
+void free_all_data(void);
+
+stack_t *add_stack_node(stack_t **stack, const int value);
+stack_t *stack_operation_delete(stack_t **head);
 
 #endif /*_MONTY_H*/
