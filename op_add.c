@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- ** opp_add - adds both top elements of the stack
+ ** op_add - adds both top elements of the stack
  ** @stack: double ptr to start of the stack
  ** @line_number: text line number
  ** Return: void always
  **/
 
-void opp_add(stack_t **stack, unsigned int line_number)
+void op_add(stack_t **stack, unsigned int line_number)
 {
 	if (var.stack_len < 2)
 	{
