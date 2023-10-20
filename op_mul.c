@@ -5,13 +5,19 @@
  ** Return: void alw
  **/
 
-void op_mul(stack_t **doubly, unsigned int line_number)
+void op_mul(stack_t **stack, unsigned int line_number)
 {
-	if (var.stack_len < 2)
+	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 	{
-		dprintf(STDOUT_FILENO, "L%u: can't mul, stack too short\n", line_number);
-		exit(EXIT_FAILURE);
+		set_op_tok_error(short_stack_error(line_number, "mul"));
+		return;
 	}
-	(*doubly)->next->n *= (*doubly)->n;
-	pop_op(doubly, line_number);
+	stack_t *second = (*stack)->next;
+	stack_t *top = second->next;
+	second->n *= top->n;
+	second->next = top->next;
+
+	if (top->next != NULL)
+		top->next->prev = second;
+	free(top);
 }

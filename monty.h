@@ -75,7 +75,7 @@ void pop_op(stack_t **stack, unsigned int line_number);
 void pall_op(stack_t **stack, unsigned int line_number);
 void pint_op(stack_t **stack, unsigned int line_number);
 void op_add(stack_t **stack, unsigned int line_number);
-void op_mul(stack_t **doubly, unsigned int line_number);
+void op_mul(stack_t **stack, unsigned int line_number);
 void op_sub(stack_t **stack, unsigned int line_number);
 void swap_op(stack_t **stack, unsigned int line_number);
 void nop_op(stack_t **stack, unsigned int line_number);
