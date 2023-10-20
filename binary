@@ -1,0 +1,56 @@
+#include "monty.h"
+
+void op_binary(stack_t **stack, unsigned int line_number, char *op)
+{
+	int first = (*stack)->next->n;
+	int second = (*stack)->next->next->n;
+
+	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
+	{
+		set_op_tok_error(short_stack_error(line_number, op));
+		return;
+	}
+	
+	if (second == 0 && (strcmp(op, "div") == 0 || strcmp(op, "mod") == 0))
+	{
+		set_op_tok_error(div_error(line_number));
+		return;
+	}
+	if (strcmp(op, "add") == 0)
+		(*stack)->next->next->n = first + second;
+	else if (strcmp(op, "sub") == 0)
+		(*stack)->next->next->n = second - first;
+	else if (strcmp(op, "div") == 0)
+		(*stack)->next->next->n = second / first;
+	else if (strcmp(op, "mul") == 0)
+		(*stack)->next->next->n = first * second;
+	else if (strcmp(op, "mod") == 0)
+		(*stack)->next->next->n = second % first;
+
+	pop_op(stack, line_number);
+}
+
+void op_add(stack_t **stack, unsigned int line_number)
+{
+	op_binary(stack, line_number, "add");
+}
+
+void op_sub(stack_t **stack, unsigned int line_number)
+{
+	op_binary(stack, line_number, "sub");
+}
+
+void op_div(stack_t **stack, unsigned int line_number)
+{
+	op_binary(stack, line_number, "div");
+}
+
+void op_mul(stack_t **stack, unsigned int line_number)
+{
+	op_binary(stack, line_number, "mul");
+}
+
+void op_mod(stack_t **stack, unsigned int line_number)
+{
+	op_binary(stack, line_number, "mod");
+}
