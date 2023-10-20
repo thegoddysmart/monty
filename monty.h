@@ -60,6 +60,7 @@ typedef struct globs
 	stack_t *top;
 	stack_t *bottom;
 	stack_t *stack;
+	char **all_lines;
 } globs_t;
 
 

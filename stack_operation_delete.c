@@ -30,7 +30,7 @@ stack_t *stack_operation_delete(stack_t **head)
 	{
 		prevNode = current->prev;
 		prevNode->next = current->next;
-		glob.TSO1 = prevNode->n;
+		glob.TOS1 = prevNode->n;
 
 		if (prevNode->prev != NULL)
 			glob.TOS2 = prevNode->prev->n;
