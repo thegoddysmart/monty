@@ -74,10 +74,10 @@ void push_op(stack_t **stack, unsigned int line_number);
 void pop_op(stack_t **stack, unsigned int line_number);
 void pall_op(stack_t **stack, unsigned int line_number);
 void pint_op(stack_t **stack, unsigned int line_number);
-void op_add(stack_t **stack, unsigned int line_number);
+/*void op_add(stack_t **stack, unsigned int line_number);
 void op_mul(stack_t **stack, unsigned int line_number);
 void op_sub(stack_t **stack, unsigned int line_number);
-void op_div(stack_t **stack, unsigned int line_number);
+void op_div(stack_t **stack, unsigned int line_number);*/
 void swap_op(stack_t **stack, unsigned int line_number);
 void nop_op(stack_t **stack, unsigned int line_number);
 void mod_op(stack_t **stack, unsigned int line_number);
@@ -97,5 +97,14 @@ int main(int argc, char **argv);
 
 stack_t *add_stack_node(stack_t **stack, const int value);
 stack_t *delete_stack_node(stack_t **head);
+
+/*Binary Ops*/
+void op_binary(stack_t **stack, unsigned int line_number, char *op);
+void op_add(stack_t **stack, unsigned int line_number);
+void op_sub(stack_t **stack, unsigned int line_number);
+void op_div(stack_t **stack, unsigned int line_number);
+void op_mul(stack_t **stack, unsigned int line_number);
+
+
 
 #endif /*_MONTY_H*/
