@@ -75,8 +75,9 @@ void pint_op(stack_t **stack, unsigned int line_number);
 void opp_add(stack_t **stack, unsigned int line_number);
 void op_mul(stack_t **doubly, unsigned int line_number);
 void op_sub(stack_t **stack, unsigned int line_number);
+void swap_op(stack_t **stack, unsigned int line_number);
 
-void freeStringArray(char **array);
+void free_str_array(char **array);
 void free_stack_nodes(stack_t **stack);
 void free_all_data(void);
 void malloc_error(void);
@@ -84,6 +85,6 @@ int _atoi(char *s);
 
 
 stack_t *add_stack_node(stack_t **stack, const int value);
-stack_t *stack_operation_delete(stack_t **head);
+stack_t *delete_stack_node(stack_t **head);
 
 #endif /*_MONTY_H*/

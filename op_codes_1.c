@@ -41,7 +41,7 @@ void pop_op(stack_t **stack, unsigned int line_number)
 		free_all_data();
 		exit(EXIT_FAILURE);
 	}
-	stack_operation_delete(stack);
+	delete_stack_node(stack);
 }
 
 

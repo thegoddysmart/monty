@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * stack_operation_delete - this deletes the last node of the stack
+ * delete_stack_node - this deletes the last node of the stack
  * @head: Double pointer to the head node of the stack
  * Return: NULL or new address
  */
 
-stack_t *stack_operation_delete(stack_t **head)
+stack_t *delete_stack_node(stack_t **head)
 {
 	stack_t *prevNode = NULL;
 	stack_t *current = *head;

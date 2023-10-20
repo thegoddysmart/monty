@@ -6,7 +6,7 @@
  * Return: Always void
  */
 
-void freeStringArray(char **array)
+void free_str_array(char **array)
 {
 	int i = 0;
 
