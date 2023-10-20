@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 		{"pall", pall_op},
 		{"pint", pint_op},
 		{"swap", swap_op},
-		{"add", op_add},
+		/* {"add", opp_add}, - add this llater */
 		{"nop", nop_op},
 		{NULL, NULL}};
 

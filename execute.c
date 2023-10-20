@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <stdio.h>
 
 /**
  * execute_opcode - Execute the opcode instructions
@@ -17,7 +18,7 @@ void execute_opcode(instruction_t opcodes_arr[], char **all_lines)
 	while (all_lines[index] != NULL)
 	{
 		i = 0, token = strtok(all_lines[index], " ");
-		cmd[0] = token;
+		cmds[0] = token;
 		token = strtok(NULL, " ");
 		cmds[1] = token, glob.arg = cmds;
 
@@ -57,7 +58,7 @@ char **reader(char *argv)
 	fileptr = fopen(argv, "r");
 	if (fileptr == NULL)
 		handle_file_err(argv);
-	while (getline(&line_buffer, &bufsize, fileptr) != -1)
+	while ((char_read = getline(&line_buffer, &bufsize, fileptr)) != -1)
 		total_lines++;
 	fclose(fileptr);
 	lines_array = malloc(sizeof(char *) * (total_lines + 1));
