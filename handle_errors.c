@@ -26,3 +26,16 @@ void handle_not_found(char **all_lines, int index, char *cmds)
 	free_stack_nodes(&(glob.stack));
 	exit(EXIT_FAILURE);
 }
+
+
+/**
+ * handle_file_err - this prints file error
+ * @argv: File name
+ * Return: Void
+ */
+
+void handle_file_err(char *argv)
+{
+	fprintf(stderr, "Error: Can't open file %s\n", argv);
+	exit(EXIT_FAILURE);
+}
