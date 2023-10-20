@@ -13,5 +13,5 @@ void op_mul(stack_t **doubly, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	(*doubly)->next->n *= (*doubly)->n;
-	_pop(doubly, line_number);
+	pop_op(doubly, line_number);
 }
