@@ -105,6 +105,12 @@ void op_sub(stack_t **stack, unsigned int line_number);
 void op_div(stack_t **stack, unsigned int line_number);
 void op_mul(stack_t **stack, unsigned int line_number);
 
+/*Other Errors*/
+void set_op_tok_error(int error_code);
+int div_error(unsigned int line_number);
+int short_stack_error(unsigned int line_number, char *op);
+int pint_error(unsigned int line_number);
+
 
 
 #endif /*_MONTY_H*/
