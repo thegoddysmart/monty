@@ -27,3 +27,17 @@ void swap_op(stack_t **stack, unsigned int line_number)
 	current->next = temp;
 	temp->prev = current;
 }
+
+
+/**
+ * nop_op - this does nothing
+ * @stack: The stack itself
+ * @line_number: this is where command is
+ * Return: Always Void
+ */
+
+void nop_op(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}
