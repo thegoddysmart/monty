@@ -66,7 +66,7 @@ typedef struct globs
 
 extern globs_t glob;
 
-
+void execute_opcode(instruction_t opcodes_arr[], char **all_lines);
 void opcode_pint(stack_t **stack, unsigned int line_number);
 void push_op(stack_t **stack, unsigned int line_number);
 void pop_op(stack_t **stack, unsigned int line_number);
@@ -83,7 +83,13 @@ void free_str_array(char **array);
 void free_stack_nodes(stack_t **stack);
 void free_all_data(void);
 void malloc_error(void);
+void handle_not_found(char **all_lines, int index, char *cmds);
+void handle_file_err(char *argv);
+void handle_all_lines(char **lines_array);
 int _atoi(char *s);
+char *dup_str(char *str);
+char **reader(char *argv);
+int main(int argc, char **argv);
 
 
 stack_t *add_stack_node(stack_t **stack, const int value);
