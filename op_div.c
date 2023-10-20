@@ -1,3 +1,5 @@
+#include "monty.h"
+
 /**
  ** op_div - Div the second value from the top of stack_t
  ** @stack: ptr to top mode of stack_t ll.
@@ -7,16 +9,19 @@
 
 void op_div(stack_t **stack, unsigned int line_number)
 {
-	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
+	int numerator = (*stack)->n;                                                                                                            int denominator = (*stack)->next->n;
+
+	if (!*stack || !(*stack)->next)
 	{
-		set_op_tok_error(short_stack_error(line_number, "div"));
-		return;
+		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
 	}
-	if ((*stack)->next->n == 0)
+	if (denominator == 0)
 	{
-		set_op_tok_error(div_error(line_number));
-		return;
+		fprintf(stderr, "L%d: division by zero\n", line_number);
+		exit(EXIT_FAILURE);
 	}
-	(*stack)->next->next->n /= (*stack)->next->n;
+	(*stack)->next->n = denominator / numerator;
 	pop_op(stack, line_number);
+
 }

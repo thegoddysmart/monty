@@ -1,3 +1,5 @@
+#include "monty.h"
+
 /**
  ** op_sub - subtract top element of stack from next element and push result
  ** @stack: The Stack
@@ -7,11 +9,14 @@
 
 void op_sub(stack_t **stack, unsigned int line_number)
 {
-	if (var.stack_len < 2)
+	int diff = (*stack)->next->n - (*stack)->n;
+
+	if (!*stack || !(*stack)->next)
 	{
-		dprintf(STDOUT_FILENO, "L%u: can't sub, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	(*stack)->prev->n -= (*stack)->n;
-	delete_stack_node(stack);
+	
+	(*stack)->next->n = diff;
+	pop_op(stack, line_number);
 }
