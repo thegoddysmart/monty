@@ -1,7 +1,7 @@
 /**
  ** op_mul - multiplies the top element to the second top element of the stack
  ** @doubly: head of the linked list
- ** @cline: line number
+ ** @line_number: line number
  ** Return: void alw
  **/
 
