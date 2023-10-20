@@ -39,3 +39,17 @@ void handle_file_err(char *argv)
 	fprintf(stderr, "Error: Can't open file %s\n", argv);
 	exit(EXIT_FAILURE);
 }
+
+
+/**
+ * handle_all_lines - this prints error and frees all lines
+ * @lines_array: Argument to array to free
+ * Return: Void
+ */
+
+void handle_all_lines(char **lines_array)
+{
+	fprintf(stderr, "Error: malloc failed\n");
+	free_str_array(lines_array);
+	exit(EXIT_FAILURE);
+}
